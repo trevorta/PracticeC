@@ -13,7 +13,7 @@ void* executeThread(void *arg) {
 }
 
 int main(int argc, char * argv[]) {
-	long i = 0;
+	long i = 0;`
 	int err;
 
 	while (1) {
