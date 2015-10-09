@@ -13,17 +13,20 @@ void* executeThread(void *arg) {
 }
 
 int main(int argc, char * argv[]) {
-	long i = 0;
 	int err;
 
-	while (i < 20) {
-		pthread_t* newThread = malloc(sizeof(pthread_t));
+	for (int i = 0; i < 20; i++) {
 		err = pthread_create(newThread, NULL, &executeThread, (void*) i);
 		if (err != 0) {
 			printf("Can't create thread: [%s]\n", strerror(err));
 		}
-		i++;
 	}
+
+	for (int i = 0; i < 20; i++) {
+		pthread_join()
+	}
+
+
 
 	printf("main thread terminates"); // main thread terminates before thread 9 executes
 }
